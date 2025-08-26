@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 dbConnect();
 
 
-app.use("/api",require("./routes/user"))
+app.use("/api",require("./routes/user"));
 
 
 
