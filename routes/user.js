@@ -12,11 +12,19 @@ router.post("/userAPI", async(req,res)=>{
 
     let {userName,password} = req.body; // means username=req.body.userName
 
-    userName = await User.findOne({})
+    userName = await User.findOne({userName:req.body.userName});
 
     if(userName){
+        return res.json({message:"user already exists"})
+    };
 
+    try{
+            
     }
+    catch(error){
+
+    };
+
 
 })
 
