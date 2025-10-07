@@ -7,23 +7,24 @@ const router = express.Router();
 router.get("/hello", async () => {
     return console.log("welcome to the routerrrr");
 
-    console.log(hello)
+    console.log(hello);
 });
 
 router.post("/userAPI", async (req, res) => {
 
-    let { userName, password } = req.body; // means username=req.body.userName
+    let { userName, email, password } = req.body; // means username=req.body.userName
 
-    userName = await User.findOne({ userName: req.body.userName });
+    const existingUser = await User.findOne({ userName: req.body.userName });
 
-    if (userName) {
+    if (existingUser) {
         return res.json({ message: "user already exists" })
     };
 
     try {
         const user = new User({
-            userName: req.body.userName,
-            password: req.body.password
+            userName:userName,
+            email: email,
+            password: password
         });
 
         await user.save();
