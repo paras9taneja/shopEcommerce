@@ -16,5 +16,5 @@ app.use("/api",require("./routes/user"));
 
 
 app.listen(PORT || 7000,()=>{
-    console.log(`server is listening at ${PORT}`)
+    console.log(`server is listening at http://localhost:${PORT}`)
 });

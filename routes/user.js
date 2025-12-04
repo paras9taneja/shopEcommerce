@@ -3,6 +3,13 @@ const User = require("../models/User");
 const router = express.Router();
 // const user=require(u)
 
+router.get("/", async (req,res) => {
+    return res.send("hello")
+    return console.log("welcome to the server");
+
+ 
+});
+
 
 router.get("/hello", async () => {
     return console.log("welcome to the routerrrr");
@@ -10,7 +17,7 @@ router.get("/hello", async () => {
     console.log(hello);
 });
 
-router.post("/userAPI", async (req, res) => {
+router.post("/createUserAPI", async (req, res) => {
 
     let { userName, email, password } = req.body; // means username=req.body.userName
 
