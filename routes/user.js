@@ -19,7 +19,7 @@ router.get("/hello", async () => {
     console.log(hello);
 });
 
-router.post("/createUserAPI", async (req, res) => {
+router.post("/createUserAPI", async (req, res)=> {
 
     let { userName, email, password } = req.body; // means username=req.body.userName
 
